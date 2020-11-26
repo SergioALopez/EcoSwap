@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">EcoSwap</string>
+    <string name="prefs_file">com.example.ecoswap.PREFERENCE_FILE_KEY</string>
+</resources>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "140801710022",
+    "firebase_url": "https://ecoswap.firebaseio.com",
+    "project_id": "ecoswap",
+    "storage_bucket": "ecoswap.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:140801710022:android:728b51e1911a347e9284c7",
+        "android_client_info": {
+          "package_name": "com.example.ecoswap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "140801710022-eo6mtk730kirbbt0imip63ip6aabe1d0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAGDMEVCugtyEyrGH-t42xsCKHK3wQzp8c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "140801710022-eo6mtk730kirbbt0imip63ip6aabe1d0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
