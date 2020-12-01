@@ -8,6 +8,7 @@ import java.util.jar.Attributes
 
 class Repo {
     private lateinit var database: DatabaseReference
+    private lateinit var userDatabase: DatabaseReference
 
     fun getProductData():LiveData<MutableList<Product>> {
         val mutableData = MutableLiveData<MutableList<Product>>()
@@ -37,6 +38,14 @@ class Repo {
 
         })
         return mutableData
+    }
+
+    fun updatePoints(userId: String, productId: String, points: String, quantity: String){
+        userDatabase = FirebaseDatabase.getInstance().reference.child("Users")
+        database = FirebaseDatabase.getInstance().reference.child("Products")
+
+        database.child(productId).child("Quantity").setValue(quantity)
+        userDatabase.child(userId).child("Points").setValue(points)
     }
 
     fun deleteData(id: String) {

@@ -29,7 +29,6 @@ class AuthActivity : AppCompatActivity() {
         ref = FirebaseDatabase.getInstance().reference.child("roles")
         data = FirebaseDatabase.getInstance().reference.child("Users")
 
-
         // Analytics Event
         val analytics: FirebaseAnalytics = FirebaseAnalytics.getInstance(this)
         val bundle = Bundle()

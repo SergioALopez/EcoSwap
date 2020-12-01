@@ -22,6 +22,25 @@ class MainAdapter(private val context: Context, private val listener: OnItemClic
         return dataList[position].id
     }
 
+    fun getProductQuantity(position: Int): String {
+        return dataList[position].quantity
+    }
+
+    fun rewardAvailable(position: Int, points: Int): Boolean {
+        val value = dataList[position].points.toInt()
+        return points >= value
+    }
+
+    fun updateQuantityValue(position: Int, quantity: Int): String {
+        val value = dataList[position].quantity.toInt()
+        return (value - 1).toString()
+    }
+
+    fun updatePointsValue(position: Int, points: Int): String {
+        val value = dataList[position].points.toInt()
+        return (points - value).toString()
+    }
+
     fun deleteListData(position: Int) {
         dataList.removeAt(position)
     }

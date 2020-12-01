@@ -83,7 +83,7 @@ class EditActivity : AppCompatActivity() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     for (postSnapshot in snapshot.children.toString())
                         if (name.isEmpty() && quantity.isEmpty() && points.isEmpty()) {
-                            Toast.makeText(this@EditActivity, "Debe llenar todos los espacios", Toast.LENGTH_LONG)
+                            Toast.makeText(this@EditActivity, "Debe llenar todos los espacios", Toast.LENGTH_LONG).show()
 
                         } else {
                             val map: HashMap<String, Any> = HashMap<String, Any>()
@@ -91,7 +91,7 @@ class EditActivity : AppCompatActivity() {
                             map["Quantity"] = quantity
                             map["Points"] = points
                             ref.child(id).updateChildren(map)
-                            Toast.makeText(this@EditActivity, "Producto subido con exito", Toast.LENGTH_LONG)
+                            Toast.makeText(this@EditActivity, "Producto subido con exito", Toast.LENGTH_LONG).show()
                             break
                         }
                 }

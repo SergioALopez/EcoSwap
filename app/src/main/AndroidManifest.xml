@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.EditActivity"></activity>
+        <activity android:name=".ui.user.CuponActivity"></activity>
+        <activity android:name=".ui.user.PromotionActivity" />
+        <activity android:name=".ui.EditActivity" />
         <activity android:name=".ui.DeleteActivity" />
         <activity android:name=".ui.VendActivity" />
         <activity android:name=".ui.AddActivity" />

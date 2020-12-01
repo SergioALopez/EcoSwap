@@ -48,7 +48,7 @@ class AddActivity : AppCompatActivity() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     for (postSnapshot in snapshot.children.toString())
                         if (postSnapshot.equals(id)) {
-                            Toast.makeText(this@AddActivity, "El ID del producto no esta disponible", Toast.LENGTH_LONG)
+                            Toast.makeText(this@AddActivity, "El ID del producto no esta disponible", Toast.LENGTH_LONG).show()
                             
                         } else {
                             val map: HashMap<String, Any> = HashMap<String, Any>()
@@ -56,7 +56,7 @@ class AddActivity : AppCompatActivity() {
                             map["Quantity"] = quantity
                             map["Points"] = points
                             ref.child(id).updateChildren(map)
-                            Toast.makeText(this@AddActivity, "Producto subido con exito", Toast.LENGTH_LONG)
+                            Toast.makeText(this@AddActivity, "Producto subido con exito", Toast.LENGTH_LONG).show()
                             break
                         }
                 }

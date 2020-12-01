@@ -20,4 +20,8 @@ class DeleteViewModel: ViewModel() {
     fun deleteProductData(id: String) {
         repo.deleteData(id)
     }
+
+    fun updatePointsData(userId: String, productId: String, points: String, quantity: String) {
+        repo.updatePoints(userId, productId, points, quantity)
+    }
 }
