@@ -108,11 +108,15 @@ class EditActivity : AppCompatActivity() {
         }
 
         returnButton.setOnClickListener {
+            onBackPressed()
+            /*
             val addIntent = Intent(this, VendActivity::class.java).apply {
                 putExtra("email", email)
                 putExtra("name", name)
             }
             startActivity(addIntent)
+
+             */
         }
 
     }

@@ -120,6 +120,8 @@ class HomeActivity : AppCompatActivity() {
 
         promotionCardView.setOnClickListener {
             val promotionIntent = Intent(this, PromotionActivity::class.java).apply {
+                putExtra("email", email)
+                putExtra("name", name)
                 putExtra("points", txtUserPoints.text.toString())
                 putExtra("id", id)
             }

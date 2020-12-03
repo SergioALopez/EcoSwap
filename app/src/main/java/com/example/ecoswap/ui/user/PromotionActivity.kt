@@ -12,8 +12,12 @@ import com.example.ecoswap.MainAdapter
 import com.example.ecoswap.R
 import com.example.ecoswap.ui.EditActivity
 import com.example.ecoswap.viewmodel.DeleteViewModel
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_delete.*
+import kotlinx.android.synthetic.main.activity_delete.recyclerView
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_home.txtUserName
+import kotlinx.android.synthetic.main.activity_promotion.*
 
 class PromotionActivity : AppCompatActivity(), MainAdapter.OnItemClickListener {
     private lateinit var adapter: MainAdapter
@@ -21,10 +25,12 @@ class PromotionActivity : AppCompatActivity(), MainAdapter.OnItemClickListener {
     private lateinit var points: String
     private lateinit var id: String
     private lateinit var quantity: String
+    private lateinit var data: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_promotion)
+        data = FirebaseDatabase.getInstance().reference.child("Users")
         adapter = MainAdapter(this, this)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
@@ -45,6 +51,21 @@ class PromotionActivity : AppCompatActivity(), MainAdapter.OnItemClickListener {
     }
 
     private fun setup(email: String, name: String, id: String, points: String) {
+        txtEmail.text = email
+        txtName.text = name
+
+        data.child(id).addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                val points = snapshot.child("Points").value.toString()
+
+                txtUserPoint.text = points
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
 
     }
 
@@ -54,11 +75,12 @@ class PromotionActivity : AppCompatActivity(), MainAdapter.OnItemClickListener {
             if (adapter.rewardAvailable(position, points.toInt())) {
                 Toast.makeText(this, "El item $position puede consumirlo", Toast.LENGTH_SHORT)
                     .show()
+                points = adapter.updatePointsValue(position, points.toInt())
 
                 viewModel.updatePointsData(
                     id,
                     adapter.getIdOnList(position),
-                    adapter.updatePointsValue(position, points.toInt()),
+                    points,
                     adapter.updateQuantityValue(position, quantity.toInt())
                 )
             } else {
