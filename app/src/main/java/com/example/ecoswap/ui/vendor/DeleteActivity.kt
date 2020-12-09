@@ -1,4 +1,4 @@
-package com.example.ecoswap.ui
+package com.example.ecoswap.ui.vendor
 
 import android.content.Context
 import android.content.Intent

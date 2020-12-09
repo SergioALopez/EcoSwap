@@ -10,13 +10,9 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.ecoswap.MainAdapter
 import com.example.ecoswap.R
-import com.example.ecoswap.ui.EditActivity
 import com.example.ecoswap.viewmodel.DeleteViewModel
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.activity_delete.*
 import kotlinx.android.synthetic.main.activity_delete.recyclerView
-import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.activity_home.txtUserName
 import kotlinx.android.synthetic.main.activity_promotion.*
 
 class PromotionActivity : AppCompatActivity(), MainAdapter.OnItemClickListener {
@@ -76,13 +72,25 @@ class PromotionActivity : AppCompatActivity(), MainAdapter.OnItemClickListener {
                 Toast.makeText(this, "El item $position puede consumirlo", Toast.LENGTH_SHORT)
                     .show()
                 points = adapter.updatePointsValue(position, points.toInt())
-
+                /*
                 viewModel.updatePointsData(
                     id,
                     adapter.getIdOnList(position),
                     points,
                     adapter.updateQuantityValue(position, quantity.toInt())
                 )
+
+                 */
+
+                val cuponIntent = Intent(this, CuponActivity::class.java).apply {
+                    putExtra("userId", id)
+                    putExtra("productId", adapter.getIdOnList(position))
+                    putExtra("points", points)
+                    putExtra("quantity", adapter.updateQuantityValue(position, quantity.toInt()))
+                    putExtra("productName", adapter.getProductName(position))
+                }
+                startActivity(cuponIntent)
+
             } else {
                 Toast.makeText(
                     this,

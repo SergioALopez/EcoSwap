@@ -5,10 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.ecoswap.R
-import com.example.ecoswap.ui.EditActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import kotlinx.android.synthetic.main.activity_add.*
 import kotlinx.android.synthetic.main.activity_home.*
 
 enum class ProviderType {
@@ -126,10 +124,6 @@ class HomeActivity : AppCompatActivity() {
                 putExtra("id", id)
             }
             startActivity(promotionIntent)
-        }
-
-        rewardCardView.setOnClickListener {
-
         }
 
     }

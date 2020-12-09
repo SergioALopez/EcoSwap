@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.VendActivity"
+    tools:context=".ui.vendor.VendActivity"
     android:background="@drawable/background_dash">
 
     <LinearLayout
@@ -96,42 +96,6 @@
                         android:fontFamily="@font/regular"
                         android:textSize="15sp"
                         android:text="Agregar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/editCardView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="6dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp"
-                >
-
-                <LinearLayout
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:src="@drawable/edit"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"/>
-
-                    <TextView
-                        android:layout_marginTop="12dp"
-                        android:textColor="@color/gray"
-                        android:fontFamily="@font/regular"
-                        android:textSize="15sp"
-                        android:text="Editar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 

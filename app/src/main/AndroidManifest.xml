@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -12,15 +13,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.user.CuponActivity"></activity>
+        <activity android:name=".ui.vendor.QrReaderActivity"></activity>
+        <activity android:name=".ui.user.CuponActivity" />
         <activity android:name=".ui.user.PromotionActivity" />
-        <activity android:name=".ui.EditActivity" />
-        <activity android:name=".ui.DeleteActivity" />
-        <activity android:name=".ui.VendActivity" />
-        <activity android:name=".ui.AddActivity" />
+        <activity android:name=".ui.vendor.EditActivity" />
+        <activity android:name=".ui.vendor.DeleteActivity" />
+        <activity android:name=".ui.vendor.VendActivity" />
+        <activity android:name=".ui.vendor.AddActivity" />
         <activity android:name=".ui.admin.AdminActivity" />
         <activity android:name=".ui.user.HomeActivity" />
-        <activity android:name=".ui.AuthActivity">
+        <activity android:name=".ui.vendor.AuthActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

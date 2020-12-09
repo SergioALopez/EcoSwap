@@ -26,6 +26,10 @@ class MainAdapter(private val context: Context, private val listener: OnItemClic
         return dataList[position].quantity
     }
 
+    fun getProductName(position: Int): String {
+        return dataList[position].name
+    }
+
     fun rewardAvailable(position: Int, points: Int): Boolean {
         val value = dataList[position].points.toInt()
         return points >= value

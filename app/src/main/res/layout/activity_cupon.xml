@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".ui.user.CuponActivity">
 
+    <ImageView
+        android:id="@+id/qrImageView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/box" />
 </androidx.constraintlayout.widget.ConstraintLayout>

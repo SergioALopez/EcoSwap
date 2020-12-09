@@ -1,4 +1,4 @@
-package com.example.ecoswap.ui
+package com.example.ecoswap.ui.vendor
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -61,12 +61,9 @@ class VendActivity : AppCompatActivity() {
             startActivity(deleteIntent)
         }
 
-        editCardView.setOnClickListener {
-            val editIntent = Intent(this, EditActivity::class.java).apply {
-                putExtra("email", email)
-                putExtra("name", name)
-            }
-            startActivity(editIntent)
+        qrCardView.setOnClickListener {
+            val qrIntent = Intent(this, QrReaderActivity::class.java)
+            startActivity(qrIntent)
         }
     }
 }

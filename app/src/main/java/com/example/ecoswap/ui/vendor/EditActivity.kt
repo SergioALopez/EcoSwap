@@ -1,23 +1,19 @@
-package com.example.ecoswap.ui
+package com.example.ecoswap.ui.vendor
 
 import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.ecoswap.R
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.database
-import com.google.firebase.database.ktx.getValue
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_add.*
 import kotlinx.android.synthetic.main.activity_add.idTextView
 import kotlinx.android.synthetic.main.activity_add.pointsTextView
 import kotlinx.android.synthetic.main.activity_add.productTextView
 import kotlinx.android.synthetic.main.activity_add.quantityTextView
 import kotlinx.android.synthetic.main.activity_add.returnButton
 import kotlinx.android.synthetic.main.activity_add.saveButton
-import kotlinx.android.synthetic.main.activity_edit.*
 
 class EditActivity : AppCompatActivity() {
 
@@ -91,7 +87,7 @@ class EditActivity : AppCompatActivity() {
                             map["Quantity"] = quantity
                             map["Points"] = points
                             ref.child(id).updateChildren(map)
-                            Toast.makeText(this@EditActivity, "Producto subido con exito", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@EditActivity, "Producto actualizado con exito", Toast.LENGTH_LONG).show()
                             break
                         }
                 }
